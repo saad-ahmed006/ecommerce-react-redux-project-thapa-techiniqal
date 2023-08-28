@@ -2,32 +2,39 @@ import { useState } from "react";
 import { FiShoppingCart, FiHeart } from "react-icons/fi";
 import { CgMenu, CgClose } from "react-icons/cg";
 import Logo from "../assets/Images/logo.png";
+import { Link, NavLink } from "react-router-dom";
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-white shadow-md ">
+    <nav className="bg-white shadow-md z-10	">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <img src={Logo} alt="logo" className="h-10" />
+           <NavLink to={'/'}><img src={Logo} alt="logo" className="h-10" /></NavLink> 
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-6">
-            <p className="text-black uppercase hover:text-helper transition-colors duration-300 cursor-pointer ">
-              Home
-            </p>
-            <p className="text-black uppercase hover:text-helper transition-colors duration-300 cursor-pointer">
-              About
-            </p>
-            <p className="text-black uppercase hover:text-helper transition-colors duration-300 cursor-pointer">
+          <div className="hidden md:flex space-x-6 italic">
+            <NavLink to={"/"}>
+              <p className="text-sm text-black uppercase hover:text-helper transition-colors duration-300 cursor-pointer ">
+                Home
+              </p>
+            </NavLink>
+            <NavLink to={"/about"}>
+              <p className="text-sm text-black uppercase hover:text-helper transition-colors duration-300 cursor-pointer">
+                About
+              </p>
+            </NavLink>
+            <p className="text-sm text-black uppercase hover:text-helper transition-colors duration-300 cursor-pointer">
               Products
             </p>
-            <p className="text-black uppercase hover:text-helper transition-colors duration-300 cursor-pointer">
-              Contact
-            </p>
+            <NavLink to={"/contact"}>
+              <p className="text-sm text-black uppercase hover:text-helper transition-colors duration-300 cursor-pointer">
+                Contact
+              </p>
+            </NavLink>
           </div>
 
           {/* Cart Icon */}
@@ -39,10 +46,12 @@ export default function Navbar() {
               </span>
             </div>
             <div className="relative">
-              <FiShoppingCart className="w-6 h-6 cursor-pointer" />
+              <NavLink to={'/cart'}>
+                <FiShoppingCart className="w-6 h-6 cursor-pointer" />
               <span className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full text-white text-xs flex items-center justify-center">
                 10
               </span>
+              </NavLink>
             </div>
           </div>
 
@@ -73,18 +82,18 @@ export default function Navbar() {
             </button>
           </div>
           <div className="flex flex-col space-y-12">
-            <p className=" uppercase hover:text-helper transition-colors duration-300 cursor-pointer ">
+            <NavLink to={'/'}><p className=" uppercase hover:text-helper transition-colors duration-300 cursor-pointer ">
               Home
-            </p>
-            <p className=" uppercase hover:text-helper transition-colors duration-300 cursor-pointer">
+            </p></NavLink>
+            <NavLink to={'/about'}><p className=" uppercase hover:text-helper transition-colors duration-300 cursor-pointer">
               About
-            </p>
-            <p className=" uppercase hover:text-helper transition-colors duration-300 cursor-pointer">
+            </p></NavLink>
+           <p className=" uppercase hover:text-helper transition-colors duration-300 cursor-pointer">
               Products
             </p>
-            <p className=" uppercase hover:text-helper transition-colors duration-300 cursor-pointer">
+            <NavLink to={'/contact'}><p className=" uppercase hover:text-helper transition-colors duration-300 cursor-pointer">
               Contact
-            </p>
+            </p></NavLink>
           </div>
         </div>
       )}
