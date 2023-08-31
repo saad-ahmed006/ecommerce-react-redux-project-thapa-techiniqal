@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "./Button";
 import HeroImage from "../assets/Images/hero.jpg";
+import { Link } from "react-router-dom";
 
 export default function HeroSection({ title }) {
   return (
@@ -12,10 +13,13 @@ export default function HeroSection({ title }) {
           </h5>
           <h1 className="text-3xl font-bold mb-3">{title}</h1>
           <p className="text-md mb-3">
-            React Ecommerce Website Tutorial in Hindi #7: Home & About Page with
-            Hero Section with Props
+            "Welcome to Thapa Store, your ultimate shopping destination.
+            Discover a wide range of high-quality products and exceptional
+            deals. Experience shopping redefined at Thapa Store!"
           </p>
-          <Button>Shop Now</Button>
+          <Link to={"/products"}>
+            <Button>Shop Now</Button>
+          </Link>
         </div>
         <img
           src={HeroImage}

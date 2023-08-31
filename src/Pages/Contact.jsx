@@ -41,7 +41,7 @@ export default function Contact() {
         </div>
         <Link
           to={"/"}
-          className="flex justify-center items-center mx-auto  mt-12 w-full sm:w-[300px] py-4 px-8 rounded-full bg-[#6254F3] text-white text-lg font-medium transition-transform active:scale-95  hover:opacity-75 "
+          className="flex justify-center items-center mx-auto  mt-12 w-full sm:w-[300px] py-4 px-8 rounded-full bg-black text-white text-lg font-medium transition-transform active:scale-95  hover:opacity-75 "
         >
           Enjoy Shopping
         </Link>
